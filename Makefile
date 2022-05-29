@@ -3,11 +3,11 @@ all: run
 
 run: build
 	@echo == Running Dockerfile ==
-	docker run -it camoore_base /usr/bin/fish
+	docker run -p 1522:22 -it camoore_base /usr/bin/fish
 
 build: init
 	@echo == Building Dockerfile ==
-	docker build -t camoore_base -p 1522:22 .
+	docker build -t camoore_base .
 	if [ -d "etc" ]; then sudo rm -rf etc; fi
 	if [ -d "home" ]; then sudo rm -rf home; fi
 
