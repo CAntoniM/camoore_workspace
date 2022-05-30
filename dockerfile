@@ -15,6 +15,8 @@ RUN useradd -ms /usr/bin/fish camoore
 #set up the servies that need to run
 RUN systemctl enable sshd
 
+EXPOSE 22
+
 #set up the system configuration files
 COPY etc /etc
 
