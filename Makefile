@@ -3,7 +3,7 @@ all: run
 
 run: build
 	@echo == Running Dockerfile ==
-	docker run -p 1522:22 -it camoore_base /usr/bin/fish
+	docker run --hostname camoore_base -p 3000:3000 camoore_base
 
 build: init
 	@echo == Building Dockerfile ==
